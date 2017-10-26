@@ -1,0 +1,31 @@
+<HTML>
+  <Body>
+    <script language="javascript">
+      var GET = {};
+      var query = window.location.search.substring(1).split("&");
+      for (var i = 0, max = query.length; i < max; i++) {
+        if (query[i] === "") // check for trailing & with no param
+          continue;
+        var param = query[i].split("=");
+        GET[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
+      } //use GET.file
+      function populatePre(url) {
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            document.getElementById('content').textContent = this.responseText;
+        };
+        xhr.open('GET', url);
+        xhr.send();
+      }
+      populatePre(GET.file);
+    </script>
+    <bootmark id="content"></bootmark>
+    <script src="https://unpkg.com/bootmark@latest/dist/bootmark.bundle.min.js"></script>
+    <script>
+      $.fn.bootmark.options.html = {
+        theme: 'cyborg',
+        toc: false
+      };
+    </script>
+  </Body>
+</HTML>
