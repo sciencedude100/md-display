@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+.control {
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin-left: 15px;
+  margin-top: 15px;
+  color: rgb(163, 241, 225);
+  font-family: 'Inconsolata', monospace;
+  border: 15px solid rgb(20, 20, 20);
+  border-radius: 8px;
+  background: rgb(20, 20, 20);
+}
+
+.control *{
+  color: rgb(163, 241, 225);
+  background-color: rgb(34, 34, 34);
+  border: none;
+}
+
+#viewer {
+  z-index: 0;
+  width: 99.5%;
+  height: 99%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
