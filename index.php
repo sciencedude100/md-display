@@ -12,7 +12,7 @@
         <?php
           if ($handle = opendir('file')) {
             while (false !== ($entry = readdir($handle))) {
-                if ($entry != "." && $entry != ".." && $entry != "blank.md") {
+                if ($entry != "." && $entry != ".." && $entry != "blank.md" && $entry != ".git" && $entry != "README.md") {
                     echo "<option id=\"$entry\">$entry</option>";
                 }
             }
