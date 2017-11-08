@@ -12,8 +12,9 @@
         <?php
           if ($handle = opendir('file')) {
             while (false !== ($entry = readdir($handle))) {
-                if ($entry != "." && $entry != ".." && $entry != "blank.md" && $entry != ".git" && $entry != "README.md") {
-                    echo "<option id=\"$entry\">$entry</option>";
+                if ($entry != "." && $entry != ".." && $entry != "blank.md" && $entry != "README.md" && $entry != ".git") {
+                    $entry_name = rtrim($entry, ".md");
+                    echo "<option id=\"$entry\">$entry_name</option>";
                 }
             }
             closedir($handle);
